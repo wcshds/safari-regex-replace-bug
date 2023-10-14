@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from "vue";
 
-let text = ref('abcるde😂éàö𣎴ùçてëêîcÏ💕😒測し試');
+let text = ref("abcるde😂éàö𣎴ùçてëêîcÏ💕😒測し試");
 </script>
 
 <template>
@@ -11,13 +11,14 @@ let text = ref('abcるde😂éàö𣎴ùçてëêîcÏ💕😒測し試');
 
     <p class="mt-5">output:</p>
     <p class="mx-5 mt-2 border h-20 rounded">
-      {{ text.replace(/[^\u{10000}-\u{10FFFF}]/gu, '') }}
+      {{ text.replace(/[^\u{10000}-\u{10FFFF}]/gu, "") }}
     </p>
 
     <p class="mt-16">Note:</p>
     <p class="ml-5">
-      This replacement of basic characters works fine in Chrome, Edge and
-      Firefox, but in Safari the surrogate pairs are broken.
+      This basic character replacement (implemented using regular expression in
+      unicode mode) works fine in Chrome, Edge, and Firefox, but in Safari the
+      surrogate pairs are broken.
     </p>
   </div>
 </template>
