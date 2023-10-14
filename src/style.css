@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input {
+    @apply h-[34px] w-full rounded  border px-4 text-sm outline-none transition duration-300 ease-in-out focus:ring-2;
+  }
+}
