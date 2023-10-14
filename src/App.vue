@@ -12,6 +12,9 @@ let text = ref("abcるde😂éàö𣎴ùçてëêîcÏ💕😒測し試");
     <p class="mt-5">output:</p>
     <p class="mx-5 mt-2 border h-20 rounded">
       {{ text.replace(/[^\u{10000}-\u{10FFFF}]/gu, "") }}
+
+      <!-- It works, but it doesn't look intuitive. -->
+      <!-- {{ Array.from(text.matchAll(/[\u{10000}-\u{10FFFF}]/ug)).join("") }} -->
     </p>
 
     <p class="mt-16">Note:</p>
